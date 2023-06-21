@@ -28,22 +28,22 @@ const assertArraysEqual = function(array1, array2) {
   }
 }; 
 
-const countOnly = function(allItems, itemsToCount) {
-  const results = {};
+const countOnly = function(allItems, itemsToCount) { //defines function countOnly that takes in allItems and itemsToCount as parameters 
+    const results = {}; //defines variable results and assigns it an empty object 
 
-  for (const item of allItems) {
-    if (itemsToCount[item]) {
-      if (results[item]) {
-        results[item] += 1;
+  for (const item of allItems) { // for loop to iterate over allItems
+    if (itemsToCount[item]) { //checks if item is in itemsToCount object
+      if (results[item]) {// checks if item is already in results object 
+        results[item] += 1;// check if item is in results and if it is, count is increased by 1
       } else {
-        results[item] = 1;
+        results[item] = 1;// if not, new property is created in results with 'item' as its key and inital count is set to 1
       }
     }
-    console.log(item);
+    console.log(item); //logs current item to console 
   }
 
-  return results;
-};
+  return results; //sets results to be the output of countOnly function
+}; 
 
 const firstNames = [
   "Karl",
@@ -57,7 +57,7 @@ const firstNames = [
   "Joe"
 ];
 
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false }); // defines result1 that uses countOnly function to define what names should and should not be counted 
 
 assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
