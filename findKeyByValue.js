@@ -6,24 +6,27 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const findKeyByValue = (object, value) => { // create function findKeyByValue that takes in two parameters 'object' and 'value'
-  const keys = Object.keys(object);
-  for (let key of keys) { // starts a for ... of loop that iterates over the keys of the array retrieved by Object.keys function 
-    if (object[key] === value) { // checks if the value passed as an argument is === to the value associated with object[key]
-      return key; // if the value passed as an argument matches the value associated with object[key] the function will return the key and end the loop
+const findKeyByValue = function(object, value){
+  const arrayOfKeys = Object.keys(object);
+
+  for (key of arrayOfKeys) {
+    if (object[key] === value) {
+      return key;
     }
   }
-  return undefined; // return undifined if the for ... in loop does not find a match 
+};
+const bestTVShowsByGenre = { 
+  sci_fi: "The Expanse",
+  comedy: "Brooklyn Nine-Nine",
+  drama:  "The Wire"
 }
 
-const object1 = { // create random object1 
-  name: 'Stephanie', 
-  age: 29,
-  eyeColor: 'blue'
-};
 
-assertEqual(findKeyByValue(object1, 'Stephanie'), 'name'); // test using assertEqual function
-assertEqual(findKeyByValue(object1, 29), 'age');
-assertEqual(findKeyByValue(object1, 'blue'), 'eyeColor');
-assertEqual(findKeyByValue(object1, 'foot'), 'bodyPart');
-console.log(Object.keys(object1));
+console.log(findKeyByValue(bestTVShowsByGenre,"The Wire"))
+
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama"); // test using assertEqual function
+assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "comedy");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+
