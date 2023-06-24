@@ -11,7 +11,7 @@ const findKeyByValue = function(object, value){
 
   for (key of arrayOfKeys) {
     if (object[key] === value) {
-      return key;
+      return key; 
     }
   }
 };
