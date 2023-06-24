@@ -1,4 +1,3 @@
-// FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -7,24 +6,39 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
+const eqArrays = function(array1, array2) { //checks if the two arrays are not the same length 
+  if (array1.length !== array2.length) {
+    return false;
+  }
 
-
-const countLetters = function (sentence){ // defines function countLetters that takes a sentance as its parameter 
-  const letterCount = {}; // defines variable letterCount and assigins it an empty object
-  for (const character of sentence) { // for loop that iterates over all characters in a sentence 
-    if (character !== ' ') { //checks if the character is not a space 
-      if (letterCount[character]) { // checks if character is already in letterToCount object  
-        letterCount[character] += 1; // if it is, adds 1 to the count 
-      } else {
-        letterCount[character] = 1; // if character is not in letterToCount object, creates new property in letterCount object and sets character as its key and initalizes count to 1
-      } 
-      }
+  for (let i = 0; i < array1.length; i++) { // for loop that runs through each element of two arrays and returns false if they do not match, true if they do 
+    if (array1[i] !== array2[i]) {
+      return false;
     }
-    return letterCount; // sets letterCount object to be the output of countLetters function
-  };
+  }
+  return true;
+};
 
-    console.log(countLetters("lighthouse in the house", "h"));
+const assertArraysEqual = function(array1, array2) { //function that logs message if eqArrays function returns true or false 
+  if (eqArrays(array1, array2)) {
+    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
+  }
+}; 
+
+const countLetters = function (sentence){
+  const results = {}; // we want an object with the character as the key and value of array of positions 
+
+  return results;
+};
+console.log(countLetters('hello', 'l'));
+
+assertArraysEqual(countLetters("hello", {
+    h: [0],
+    e: [1],
+    l: [2,3],
+    o: [4]
+  })
+)   
 
