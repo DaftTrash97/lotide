@@ -27,4 +27,22 @@ const assertArraysEqual = function(array1, array2) { //function that logs messag
   }
 }; 
 
-assertArraysEqual([4, 3, 4], [4, 4, 4]);
+const takeUntil = function(array, callback) {
+  const result = []; 
+  for (item of array) {
+    if (callback(item)) {
+      break;
+    }
+    result.push(item);
+  };
+  return result;
+};
+
+const names1 = ['Stephanie', 'James', 'Vincent', 'Cid', 'Miguel'];
+const names2 = ['Stephanie', 'James', 'Vincent', 'Cid', 'Miguel', 'Cloud', 'Sephiroth'];
+const result1 = takeUntil(names1, x => x === 'Cid');
+const result2 = takeUntil(names2, x => x === 'Cid');
+console.log(result1);
+console.log(result2);
+
+assertArraysEqual(result1, result2);
