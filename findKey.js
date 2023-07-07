@@ -1,10 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 const findKey = function(object, callback) {
   for (const key in object) { // for loop to run through items in an object
@@ -15,17 +9,4 @@ const findKey = function(object, callback) {
 return undefined; // if the value does not match our callback argument, return undefined
 };
 
-const games = {
-  Playstation : 'Final Fantasy',
-  xBox : 'Gears of War',
-  Nintendo : 'The Ledgend of Zelda'
-};
-
-const games2 = {
-  Playstation : 'Castlevania',
-  xBox : 'Halo',
-  Nintendo : 'Mario'
-};
-
-assertEqual(findKey(games, value => value === 'Final Fantasy'), 'Playstation');
-assertEqual(findKey(games2, value => value === 'Halo'), 'Playstation');
+module.exports = findKey;
