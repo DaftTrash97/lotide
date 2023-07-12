@@ -1,4 +1,0 @@
-const name = "Giorno Giovanna" 
-
-console.log(`Hello, ${name}!`);
-

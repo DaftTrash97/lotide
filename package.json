@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@dafttrash197/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://docs.npmjs.com/cli/v9/configuring-npm/package-json",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/DaftTrash97/lotide.git"
   },
-  "author": "",
+  "author": "https://docs.npmjs.com/cli/v9/configuring-npm/package-json",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DaftTrash97/lotide/issues"
