@@ -1,8 +1,8 @@
 {
-  "name": "@dafttrash197/lotide",
-  "version": "1.0.0",
+  "name": "@dafttrash97/lotide",
+  "version": "1.0.1",
   "description": "https://docs.npmjs.com/cli/v9/configuring-npm/package-json",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
